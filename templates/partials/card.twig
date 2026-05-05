@@ -1,0 +1,41 @@
+{#
+    Partial : card.twig
+    Paramètres :
+      - title     : string
+      - subtitle  : string (optionnel)
+      - date      : string (optionnel)
+      - tags      : array  (optionnel)
+      - body      : string HTML (optionnel)
+      - link      : string URL (optionnel)
+      - link_label: string (optionnel)
+      - accent    : bool   (optionnel) — met en avant la carte
+#}
+<article class="card {% if accent is defined and accent %}card--accent{% endif %}">
+    <div class="card__header">
+        {% if date is defined and date %}
+        <time class="card__date">{{ date }}</time>
+        {% endif %}
+        <h3 class="card__title">{{ title }}</h3>
+        {% if subtitle is defined and subtitle %}
+        <p class="card__subtitle">{{ subtitle }}</p>
+        {% endif %}
+    </div>
+
+    {% if tags is defined and tags %}
+    <ul class="card__tags" role="list">
+        {% for tag in tags %}
+        <li class="card__tag">{{ tag }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if body is defined and body %}
+    <div class="card__body">{{ body|raw }}</div>
+    {% endif %}
+
+    {% if link is defined and link %}
+    <a href="{{ link }}" class="card__link" {% if link starts with 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>
+        {{ link_label ?? 'Voir plus' }} <span aria-hidden="true">→</span>
+    </a>
+    {% endif %}
+</article>

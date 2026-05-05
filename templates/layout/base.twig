@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %} — {{ profil.prenom ?? 'Mon' }} {{ profil.nom ?? 'Portfolio' }}</title>
+    <meta name="description" content="{% block meta_description %}Portfolio personnel{% endblock %}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="page--{{ currentPage }}">
+
+    <!-- Grain overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Ambient glow -->
+    <div class="ambient" aria-hidden="true"></div>
+
+    <!-- Navigation latérale -->
+    {% include 'partials/nav.twig' %}
+
+    <!-- Contenu principal -->
+    <main class="main" id="main-content">
+        <div class="page-wrapper">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    {% include 'partials/footer.twig' %}
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js" defer></script>
+    {% block extra_scripts %}{% endblock %}
+
+</body>
+</html>

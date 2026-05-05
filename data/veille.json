@@ -1,0 +1,49 @@
+{
+  "categories": ["IA & Machine Learning", "Cybersécurité", "Développement Web", "Cloud & DevOps"],
+  "articles": [
+    {
+      "titre": "Les modèles de langage et leur impact sur le développement logiciel",
+      "source": "Le Monde Informatique",
+      "date": "Mars 2025",
+      "categorie": "IA & Machine Learning",
+      "resume": "Une analyse approfondie de la façon dont les LLMs transforment les pratiques de développement, de la génération de code à la revue automatisée.",
+      "tags": ["LLM", "Copilot", "Productivité", "IA générative"],
+      "lien": "https://example.com",
+      "note": 4,
+      "avis": "Très bon article qui met en perspective les avantages réels des assistants IA en contexte professionnel."
+    },
+    {
+      "titre": "OWASP Top 10 2024 : les nouvelles menaces web à connaître",
+      "source": "OWASP Foundation",
+      "date": "Janv. 2025",
+      "categorie": "Cybersécurité",
+      "resume": "Mise à jour de la liste des 10 risques de sécurité web les plus critiques, avec de nouvelles entrées liées aux API et à l'injection de prompts IA.",
+      "tags": ["OWASP", "Sécurité", "API", "Web"],
+      "lien": "https://owasp.org",
+      "note": 5,
+      "avis": "Référence incontournable. J'ai appliqué plusieurs recommandations dans mon projet de stage."
+    },
+    {
+      "titre": "PHP 8.3 : les nouvelles fonctionnalités en détail",
+      "source": "PHP.net",
+      "date": "Déc. 2024",
+      "categorie": "Développement Web",
+      "resume": "Tour d'horizon des nouveautés de PHP 8.3 : typed class constants, json_validate(), readonly properties.",
+      "tags": ["PHP", "Backend", "Performances"],
+      "lien": "https://php.net",
+      "note": 4,
+      "avis": "Documentation officielle claire. Les typed constants vont vraiment simplifier mon code."
+    },
+    {
+      "titre": "Docker et l'orchestration avec Kubernetes pour débutants",
+      "source": "Digital Ocean Blog",
+      "date": "Fév. 2025",
+      "categorie": "Cloud & DevOps",
+      "resume": "Introduction pratique à la conteneurisation et à l'orchestration, avec exemples concrets de déploiement.",
+      "tags": ["Docker", "Kubernetes", "DevOps", "CI/CD"],
+      "lien": "https://digitalocean.com",
+      "note": 3,
+      "avis": "Bon point d'entrée, mais manque d'exemples avancés. Suffisant pour comprendre les bases."
+    }
+  ]
+}

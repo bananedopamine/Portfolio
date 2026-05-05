@@ -1,0 +1,150 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}Missions{% endblock %}
+
+{% block content %}
+{% include 'partials/section-header.twig' with {
+    label: '04 — Réalisations',
+    heading: 'Mes missions',
+    subtext: 'Projets réalisés durant le BTS et compétences développées.'
+} %}
+
+<!-- Filtres par compétence -->
+{% if data.competences_bts is defined %}
+<div class="filter-bar" role="group" aria-label="Filtrer par compétence">
+    <button class="filter-btn filter-btn--active" data-filter="all">Tout afficher</button>
+    {% for comp in data.competences_bts %}
+    <button class="filter-btn" data-filter="{{ comp.code | lower | replace({' ': '-'}) }}">{{ comp.code }}</button>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Grille des missions -->
+<div class="missions-grid" id="missionsGrid">
+    {% if data.missions is defined and data.missions %}
+        {% for mission in data.missions %}
+        <article class="mission-card"
+            data-competences="{{ mission.competences | map(c => c | lower | replace({' ': '-'})) | join(' ') }}">
+
+            {% if mission.image is defined %}
+            <div class="mission-card__cover">
+                <img src="{{ mission.image }}" alt="{{ mission.titre }}" loading="lazy">
+            </div>
+            {% else %}
+            <div class="mission-card__cover mission-card__cover--empty" aria-hidden="true">
+                <span class="mission-card__cover-index">{{ loop.index | format('%02d') }}</span>
+            </div>
+            {% endif %}
+
+            <div class="mission-card__body">
+                <div class="mission-card__header">
+                    <time class="timeline__date">{{ mission.periode ?? '' }}</time>
+                    <span class="exp__type">{{ mission.contexte ?? 'BTS' }}</span>
+                </div>
+
+                <h3 class="mission-card__title">{{ mission.titre }}</h3>
+                <p class="mission-card__desc">{{ mission.description }}</p>
+
+                {% if mission.competences is defined %}
+                <ul class="card__tags" role="list">
+                    {% for comp in mission.competences %}
+                    <li class="card__tag">{{ comp }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if mission.technologies is defined %}
+                <ul class="mission-card__techs" role="list">
+                    {% for tech in mission.technologies %}
+                    <li class="mission-card__tech">{{ tech }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <div class="mission-card__footer">
+                    {% if mission.lien_demo is defined %}
+                    <a href="{{ mission.lien_demo }}" class="card__link" target="_blank" rel="noopener noreferrer">
+                        Démo <span aria-hidden="true">↗</span>
+                    </a>
+                    {% endif %}
+                    {% if mission.lien_rapport is defined %}
+                    <a href="{{ mission.lien_rapport }}" class="card__link" target="_blank" rel="noopener noreferrer">
+                        Rapport <span aria-hidden="true">↗</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    {% else %}
+        <p class="empty-state">Aucune mission renseignée. Ajoutez vos données dans <code>data/missions.json</code>.</p>
+    {% endif %}
+</div>
+
+<!-- Tableau des compétences BTS -->
+{% if data.competences_bts is defined %}
+<section class="section-block">
+    {% include 'partials/section-header.twig' with {
+        label: 'Référentiel',
+        heading: 'Compétences BTS SIO'
+    } %}
+
+    <div class="competences-table-wrapper">
+        <table class="competences-table" role="table">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Compétence</th>
+                    <th scope="col">Missions associées</th>
+                    <th scope="col">Niveau</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comp in data.competences_bts %}
+                <tr>
+                    <td><code class="comp-code">{{ comp.code }}</code></td>
+                    <td>{{ comp.libelle }}</td>
+                    <td>
+                        <ul class="comp-missions" role="list">
+                            {% for m in comp.missions %}
+                            <li>{{ m }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <span class="comp-level comp-level--{{ comp.niveau | lower }}">{{ comp.niveau }}</span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Filtre missions côté client
+const btns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.mission-card');
+
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('filter-btn--active'));
+        btn.classList.add('filter-btn--active');
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+            if (filter === 'all' || card.dataset.competences.includes(filter)) {
+                card.style.display = '';
+                card.style.opacity = '1';
+            } else {
+                card.style.opacity = '0';
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

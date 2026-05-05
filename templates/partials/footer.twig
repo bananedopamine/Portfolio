@@ -1,0 +1,20 @@
+<footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+        <p class="footer__copy">
+            &copy; {{ "now"|date("Y") }}
+            <span>{{ profil.prenom ?? '' }} {{ profil.nom ?? '' }}</span>
+        </p>
+
+        {% if profil.reseaux is defined %}
+        <ul class="footer__links" role="list">
+            {% for reseau in profil.reseaux %}
+            <li>
+                <a href="{{ reseau.url }}" class="footer__link" target="_blank" rel="noopener noreferrer" aria-label="{{ reseau.label }}">
+                    {{ reseau.label }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</footer>

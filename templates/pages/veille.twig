@@ -1,0 +1,95 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}Veille technologique{% endblock %}
+
+{% block content %}
+{% include 'partials/section-header.twig' with {
+    label: '05 — Curiosité',
+    heading: 'Veille technologique',
+    subtext: 'Articles, ressources et innovations que je suis de près.'
+} %}
+
+<!-- Filtres thématiques -->
+{% if data.categories is defined %}
+<div class="filter-bar" role="group" aria-label="Filtrer par thème">
+    <button class="filter-btn filter-btn--active" data-filter="all">Tous les thèmes</button>
+    {% for cat in data.categories %}
+    <button class="filter-btn" data-filter="{{ cat | lower | replace({' ': '-'}) }}">{{ cat }}</button>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Articles -->
+<div class="articles-grid" id="articlesGrid">
+    {% if data.articles is defined and data.articles %}
+        {% for article in data.articles %}
+        <article class="article-card"
+            data-category="{{ article.categorie | lower | replace({' ': '-'}) }}">
+
+            <div class="article-card__meta">
+                <span class="article-card__category">{{ article.categorie }}</span>
+                {% if article.date is defined %}
+                <time class="timeline__date">{{ article.date }}</time>
+                {% endif %}
+            </div>
+
+            <h3 class="article-card__title">{{ article.titre }}</h3>
+
+            {% if article.source is defined %}
+            <p class="article-card__source">Source : <em>{{ article.source }}</em></p>
+            {% endif %}
+
+            {% if article.resume is defined %}
+            <p class="article-card__resume">{{ article.resume }}</p>
+            {% endif %}
+
+            {% if article.tags is defined %}
+            <ul class="card__tags" role="list">
+                {% for tag in article.tags %}
+                <li class="card__tag">{{ tag }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="article-card__footer">
+                {% if article.lien is defined %}
+                <a href="{{ article.lien }}" class="card__link" target="_blank" rel="noopener noreferrer">
+                    Lire l'article <span aria-hidden="true">↗</span>
+                </a>
+                {% endif %}
+                {% if article.note is defined %}
+                <span class="article-card__note" title="Ma note">{{ article.note }}/5 ★</span>
+                {% endif %}
+            </div>
+
+            {% if article.avis is defined %}
+            <blockquote class="article-card__avis">
+                <p>{{ article.avis }}</p>
+            </blockquote>
+            {% endif %}
+        </article>
+        {% endfor %}
+    {% else %}
+        <p class="empty-state">Aucun article renseigné. Ajoutez vos données dans <code>data/veille.json</code>.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+const btns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.article-card');
+
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('filter-btn--active'));
+        btn.classList.add('filter-btn--active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+            const show = filter === 'all' || card.dataset.category === filter;
+            card.style.display = show ? '' : 'none';
+        });
+    });
+});
+</script>
+{% endblock %}

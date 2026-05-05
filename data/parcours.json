@@ -1,0 +1,31 @@
+{
+  "formations": [
+    {
+      "periode": "2023 — 2025",
+      "diplome": "BTS Services Informatiques aux Organisations",
+      "etablissement": "Lycée / CFA Exemple",
+      "lieu": "Paris, France",
+      "description": "Option SLAM (Solutions Logicielles et Applications Métiers). Formation orientée développement d'applications, bases de données et conduite de projets informatiques.",
+      "matieres": ["PHP", "SQL", "JavaScript", "Python", "Réseaux", "Cybersécurité", "Gestion de projet"],
+      "actuel": true
+    },
+    {
+      "periode": "2020 — 2023",
+      "diplome": "Baccalauréat Général",
+      "etablissement": "Lycée Exemple",
+      "lieu": "Paris, France",
+      "description": "Spécialités Mathématiques et Numérique & Sciences Informatiques.",
+      "matieres": ["Mathématiques", "NSI", "Physique-Chimie"],
+      "mention": "Bien"
+    }
+  ],
+  "certifications": [
+    {
+      "nom": "Certification Cisco CCNA Introduction",
+      "organisme": "Cisco Networking Academy",
+      "annee": "2024",
+      "competences": ["Réseaux", "TCP/IP", "Routage"],
+      "lien": null
+    }
+  ]
+}

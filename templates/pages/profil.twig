@@ -1,0 +1,121 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block content %}
+{% include 'partials/section-header.twig' with {
+    label: '01 — Qui suis-je',
+    heading: 'Mon profil',
+    subtext: 'Compétences, personnalité et centres d\'intérêt.'
+} %}
+
+<div class="profil-layout">
+
+    <!-- Bloc identité -->
+    <aside class="profil-id">
+        <div class="profil-id__avatar">
+            {% if profil.photo is defined %}
+            <img src="{{ profil.photo }}" alt="Photo de {{ profil.prenom }}" class="profil-id__img">
+            {% else %}
+            <div class="profil-id__placeholder" aria-label="Photo de profil">
+                {{ profil.initiales ?? 'MP' }}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="profil-id__info">
+            <h2 class="profil-id__name">{{ profil.prenom ?? '' }} {{ profil.nom ?? '' }}</h2>
+            <p class="profil-id__role">{{ profil.titre ?? '' }}</p>
+
+            {% if profil.localisation is defined %}
+            <p class="profil-id__meta">📍 {{ profil.localisation }}</p>
+            {% endif %}
+            {% if profil.email is defined %}
+            <p class="profil-id__meta">✉ <a href="mailto:{{ profil.email }}">{{ profil.email }}</a></p>
+            {% endif %}
+        </div>
+
+        {% if profil.reseaux is defined %}
+        <ul class="profil-id__socials" role="list">
+            {% for reseau in profil.reseaux %}
+            <li>
+                <a href="{{ reseau.url }}" class="profil-id__social-link" target="_blank" rel="noopener noreferrer">
+                    {{ reseau.label }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </aside>
+
+    <!-- Bloc contenu -->
+    <div class="profil-content">
+
+        <!-- À propos -->
+        {% if profil.apropos is defined %}
+        <div class="profil-section">
+            <h3 class="profil-section__title">À propos</h3>
+            <p class="profil-section__text">{{ profil.apropos }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Compétences techniques -->
+        {% if data.competences_tech is defined %}
+        <div class="profil-section">
+            <h3 class="profil-section__title">Compétences techniques</h3>
+            <ul class="skills-grid" role="list">
+                {% for skill in data.competences_tech %}
+                <li class="skill-item">
+                    <span class="skill-item__name">{{ skill.nom }}</span>
+                    <div class="skill-item__bar" role="progressbar" aria-valuenow="{{ skill.niveau }}" aria-valuemin="0" aria-valuemax="100">
+                        <div class="skill-item__fill" style="width: {{ skill.niveau }}%"></div>
+                    </div>
+                    <span class="skill-item__level">{{ skill.niveau }}%</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Compétences transversales -->
+        {% if data.soft_skills is defined %}
+        <div class="profil-section">
+            <h3 class="profil-section__title">Soft skills</h3>
+            <ul class="tag-cloud" role="list">
+                {% for skill in data.soft_skills %}
+                <li class="card__tag">{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Langues -->
+        {% if data.langues is defined %}
+        <div class="profil-section">
+            <h3 class="profil-section__title">Langues</h3>
+            <ul class="langues-list" role="list">
+                {% for langue in data.langues %}
+                <li class="langues-item">
+                    <span class="langues-item__name">{{ langue.nom }}</span>
+                    <span class="langues-item__niveau">{{ langue.niveau }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Centres d'intérêt -->
+        {% if data.interets is defined %}
+        <div class="profil-section">
+            <h3 class="profil-section__title">Centres d'intérêt</h3>
+            <ul class="tag-cloud" role="list">
+                {% for interet in data.interets %}
+                <li class="card__tag">{{ interet }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

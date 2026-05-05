@@ -1,0 +1,86 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}Parcours{% endblock %}
+
+{% block content %}
+{% include 'partials/section-header.twig' with {
+    label: '02 — Formation',
+    heading: 'Mon parcours',
+    subtext: 'Les établissements qui ont façonné mon parcours académique.'
+} %}
+
+<!-- Timeline scolaire -->
+<div class="timeline" role="list">
+    {% if data.formations is defined and data.formations %}
+        {% for formation in data.formations %}
+        <div class="timeline__item {% if formation.actuel is defined and formation.actuel %}timeline__item--current{% endif %}" role="listitem">
+
+            <div class="timeline__marker" aria-hidden="true">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+            </div>
+
+            <article class="timeline__card">
+                <div class="timeline__card-header">
+                    <time class="timeline__date">{{ formation.periode }}</time>
+                    {% if formation.actuel is defined and formation.actuel %}
+                    <span class="badge badge--active">En cours</span>
+                    {% endif %}
+                </div>
+
+                <h3 class="timeline__title">{{ formation.diplome }}</h3>
+                <p class="timeline__school">{{ formation.etablissement }}</p>
+
+                {% if formation.lieu is defined %}
+                <p class="timeline__location">{{ formation.lieu }}</p>
+                {% endif %}
+
+                {% if formation.description is defined %}
+                <p class="timeline__desc">{{ formation.description }}</p>
+                {% endif %}
+
+                {% if formation.matieres is defined %}
+                <ul class="card__tags" role="list">
+                    {% for matiere in formation.matieres %}
+                    <li class="card__tag">{{ matiere }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if formation.mention is defined %}
+                <p class="timeline__mention">Mention : <strong>{{ formation.mention }}</strong></p>
+                {% endif %}
+            </article>
+        </div>
+        {% endfor %}
+    {% else %}
+        <!-- Exemple vide -->
+        <p class="empty-state">Aucune formation renseignée. Ajoutez vos données dans <code>data/parcours.json</code>.</p>
+    {% endif %}
+</div>
+
+<!-- Certifications / Diplômes complémentaires -->
+{% if data.certifications is defined and data.certifications %}
+<section class="section-block">
+    {% include 'partials/section-header.twig' with {
+        label: 'Complémentaire',
+        heading: 'Certifications'
+    } %}
+
+    <ul class="certif-grid" role="list">
+        {% for certif in data.certifications %}
+        <li>
+            {% include 'partials/card.twig' with {
+                title: certif.nom,
+                subtitle: certif.organisme,
+                date: certif.annee,
+                tags: certif.competences ?? [],
+                link: certif.lien ?? null,
+                link_label: 'Voir le certificat'
+            } %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}
+{% endblock %}

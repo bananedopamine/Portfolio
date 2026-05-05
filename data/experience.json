@@ -1,0 +1,35 @@
+{
+  "experiences": [
+    {
+      "periode": "Avr — Juin 2024",
+      "type": "Stage",
+      "poste": "Développeur web junior",
+      "entreprise": "Entreprise Exemple SAS",
+      "lieu": "Paris, France",
+      "description": "Développement et maintenance d'une application web interne de gestion des congés et plannings.",
+      "missions": [
+        "Développement de nouvelles fonctionnalités avec PHP/Symfony",
+        "Création d'interfaces utilisateur en HTML, CSS, JavaScript",
+        "Rédaction de la documentation technique",
+        "Participation aux revues de code en équipe"
+      ],
+      "competences": ["PHP", "Symfony", "JavaScript", "MySQL", "Git", "Agile"],
+      "actuel": false
+    },
+    {
+      "periode": "Juin — Juil. 2023",
+      "type": "Stage d'observation",
+      "poste": "Technicien informatique",
+      "entreprise": "Société Exemple SARL",
+      "lieu": "Paris, France",
+      "description": "Découverte du métier de technicien en entreprise, maintenance du parc informatique et support utilisateurs.",
+      "missions": [
+        "Support technique de niveau 1 et 2",
+        "Installation et configuration de postes de travail",
+        "Inventaire et suivi du parc informatique"
+      ],
+      "competences": ["Windows", "Active Directory", "Support", "ITIL"],
+      "actuel": false
+    }
+  ]
+}

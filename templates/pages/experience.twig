@@ -1,0 +1,67 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}Expérience{% endblock %}
+
+{% block content %}
+{% include 'partials/section-header.twig' with {
+    label: '03 — Professionnel',
+    heading: 'Mon expérience',
+    subtext: 'Stages et expériences professionnelles acquises.'
+} %}
+
+<!-- Stages & emplois -->
+<div class="timeline" role="list">
+    {% if data.experiences is defined and data.experiences %}
+        {% for exp in data.experiences %}
+        <div class="timeline__item {% if exp.actuel is defined and exp.actuel %}timeline__item--current{% endif %}" role="listitem">
+
+            <div class="timeline__marker" aria-hidden="true">
+                <div class="timeline__dot"></div>
+                <div class="timeline__line"></div>
+            </div>
+
+            <article class="timeline__card">
+                <div class="timeline__card-header">
+                    <div>
+                        <time class="timeline__date">{{ exp.periode }}</time>
+                        <span class="exp__type">{{ exp.type ?? 'Stage' }}</span>
+                    </div>
+                    {% if exp.actuel is defined and exp.actuel %}
+                    <span class="badge badge--active">En cours</span>
+                    {% endif %}
+                </div>
+
+                <h3 class="timeline__title">{{ exp.poste }}</h3>
+                <p class="timeline__school">{{ exp.entreprise }}</p>
+
+                {% if exp.lieu is defined %}
+                <p class="timeline__location">{{ exp.lieu }}</p>
+                {% endif %}
+
+                {% if exp.description is defined %}
+                <p class="timeline__desc">{{ exp.description }}</p>
+                {% endif %}
+
+                {% if exp.missions is defined %}
+                <ul class="exp__missions">
+                    {% for mission in exp.missions %}
+                    <li class="exp__mission-item">{{ mission }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if exp.competences is defined %}
+                <ul class="card__tags" role="list">
+                    {% for comp in exp.competences %}
+                    <li class="card__tag">{{ comp }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </article>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="empty-state">Aucune expérience renseignée. Ajoutez vos données dans <code>data/experience.json</code>.</p>
+    {% endif %}
+</div>
+{% endblock %}

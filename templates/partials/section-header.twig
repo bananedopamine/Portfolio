@@ -1,0 +1,17 @@
+{#
+    Partial : section-header.twig
+    Paramètres :
+      - label    : string — petite étiquette au-dessus
+      - heading  : string — titre principal
+      - subtext  : string (optionnel)
+#}
+<header class="section-header">
+    {% if label is defined and label %}
+    <p class="section-header__label">{{ label }}</p>
+    {% endif %}
+    <h2 class="section-header__heading">{{ heading }}</h2>
+    {% if subtext is defined and subtext %}
+    <p class="section-header__subtext">{{ subtext }}</p>
+    {% endif %}
+    <div class="section-header__rule" aria-hidden="true"></div>
+</header>

@@ -1,0 +1,7 @@
+{
+  "stats": [
+    { "valeur": "BTS",  "label": "Formation en cours" },
+    { "valeur": "2",    "label": "Stages effectués" },
+    { "valeur": "10+",  "label": "Projets réalisés" }
+  ]
+}

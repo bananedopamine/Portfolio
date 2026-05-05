@@ -1,0 +1,39 @@
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <!-- Logo / Identité -->
+    <div class="nav__brand">
+        <a href="/accueil" class="nav__logo">
+            <span class="nav__logo-initials">{{ profil.initiales ?? 'MP' }}</span>
+        </a>
+    </div>
+
+    <!-- Burger mobile -->
+    <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navList">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Liens -->
+    <ul class="nav__list" id="navList" role="list">
+        {% for item in nav %}
+        <li class="nav__item">
+            <a href="/{{ item.slug }}"
+               class="nav__link {% if currentPage == item.slug %}nav__link--active{% endif %}"
+               aria-current="{% if currentPage == item.slug %}page{% else %}false{% endif %}">
+                <span class="nav__link-indicator" aria-hidden="true"></span>
+                <span class="nav__link-label">{{ item.label }}</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Disponibilité (optionnel) -->
+    {% if profil.disponible is defined %}
+    <div class="nav__status">
+        <span class="nav__status-dot {% if profil.disponible %}nav__status-dot--open{% endif %}" aria-hidden="true"></span>
+        <span class="nav__status-label">
+            {% if profil.disponible %}Disponible{% else %}En poste{% endif %}
+        </span>
+    </div>
+    {% endif %}
+</nav>

@@ -1,0 +1,117 @@
+{% extends 'layout/base.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+{% include 'partials/section-header.twig' with {
+    label: '06 — Échangeons',
+    heading: 'Me contacter',
+    subtext: 'Une opportunité, une question ? Écrivez-moi.'
+} %}
+
+<div class="contact-layout">
+
+    <!-- Informations de contact -->
+    <aside class="contact-info">
+        <h3 class="contact-info__title">Retrouvez-moi</h3>
+
+        {% if profil.email is defined %}
+        <div class="contact-info__item">
+            <span class="contact-info__label">Email</span>
+            <a href="mailto:{{ profil.email }}" class="contact-info__value">{{ profil.email }}</a>
+        </div>
+        {% endif %}
+
+        {% if profil.localisation is defined %}
+        <div class="contact-info__item">
+            <span class="contact-info__label">Localisation</span>
+            <span class="contact-info__value">{{ profil.localisation }}</span>
+        </div>
+        {% endif %}
+
+        {% if profil.reseaux is defined %}
+        <div class="contact-info__item">
+            <span class="contact-info__label">Réseaux</span>
+            <ul class="contact-info__socials" role="list">
+                {% for reseau in profil.reseaux %}
+                <li>
+                    <a href="{{ reseau.url }}" class="contact-info__social" target="_blank" rel="noopener noreferrer">
+                        {{ reseau.label }} <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if profil.disponible is defined %}
+        <div class="contact-info__availability">
+            <span class="nav__status-dot {% if profil.disponible %}nav__status-dot--open{% endif %}" aria-hidden="true"></span>
+            <span>{% if profil.disponible %}Disponible pour de nouvelles opportunités{% else %}Actuellement en poste{% endif %}</span>
+        </div>
+        {% endif %}
+    </aside>
+
+    <!-- Formulaire de contact -->
+    <div class="contact-form-wrapper">
+        <form class="contact-form" action="/contact" method="POST" novalidate id="contactForm">
+            <div class="contact-form__row">
+                <div class="form-group">
+                    <label class="form-label" for="nom">Nom <span class="form-required" aria-hidden="true">*</span></label>
+                    <input type="text" id="nom" name="nom" class="form-input" placeholder="Votre nom" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email <span class="form-required" aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.fr" required autocomplete="email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="sujet">Sujet <span class="form-required" aria-hidden="true">*</span></label>
+                <select id="sujet" name="sujet" class="form-input form-select" required>
+                    <option value="" disabled selected>Choisir un sujet</option>
+                    <option value="stage">Proposition de stage</option>
+                    <option value="emploi">Offre d'emploi</option>
+                    <option value="projet">Collaboration / Projet</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="message">Message <span class="form-required" aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" class="form-input form-textarea" rows="6" placeholder="Décrivez votre demande…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">
+                Envoyer le message <span aria-hidden="true">→</span>
+            </button>
+
+            <p class="form-note">* Champs obligatoires. Vos données ne seront pas transmises à des tiers.</p>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Validation simple côté client
+const form = document.getElementById('contactForm');
+if (form) {
+    form.addEventListener('submit', e => {
+        const inputs = form.querySelectorAll('[required]');
+        let valid = true;
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                input.classList.add('form-input--error');
+                valid = false;
+            } else {
+                input.classList.remove('form-input--error');
+            }
+        });
+        if (!valid) {
+            e.preventDefault();
+        }
+    });
+}
+</script>
+{% endblock %}
