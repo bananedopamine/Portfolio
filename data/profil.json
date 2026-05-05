@@ -1,17 +1,17 @@
 {
-  "prenom": "Prénom",
-  "nom": "Nom",
-  "initiales": "PN",
+  "prenom": "Marc",
+  "nom": "Dufour",
+  "initiales": "MD",
   "titre": "Étudiant BTS SIO — Option SLAM",
-  "localisation": "Paris, France",
-  "email": "contact@monportfolio.fr",
+  "localisation": "StJoSup, Le Havre, France",
+  "email": "marc.dufour@stjosup.com",
   "accroche": "Passionné par le développement web et les nouvelles technologies, je construis des solutions robustes et élégantes.",
   "apropos": "En deuxième année de BTS SIO option SLAM, je développe mes compétences en développement logiciel, web et en gestion de projets informatiques. Curieux, rigoureux et autonome, j'aime résoudre des problèmes concrets à travers le code.",
   "disponible": true,
   "photo": null,
   "reseaux": [
-    { "label": "LinkedIn", "url": "https://linkedin.com" },
-    { "label": "GitHub",   "url": "https://github.com" }
+    { "label": "LinkedIn", "url": "https://linkedin.com/in/marc-dufour-904586329" },
+    { "label": "GitHub",   "url": "https://github.com/bananedopamine" }
   ],
   "competences_tech": [
     { "nom": "PHP / Symfony",    "niveau": 75 },
