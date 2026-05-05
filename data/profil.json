@@ -8,7 +8,7 @@
   "accroche": "Passionné par le développement web et les nouvelles technologies, je construis des solutions robustes et élégantes.",
   "apropos": "En deuxième année de BTS SIO option SLAM, je développe mes compétences en développement logiciel, web et en gestion de projets informatiques. Curieux, rigoureux et autonome, j'aime résoudre des problèmes concrets à travers le code.",
   "disponible": true,
-  "photo": null,
+  "photo": "/assets/all_rainbows.jpg",
   "reseaux": [
     { "label": "LinkedIn", "url": "https://linkedin.com/in/marc-dufour-904586329" },
     { "label": "GitHub",   "url": "https://github.com/bananedopamine" }
