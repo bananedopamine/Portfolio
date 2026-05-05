@@ -3,8 +3,8 @@
     {
       "titre": "Application de gestion de stock",
       "periode": "2024",
-      "contexte": "BTS — Projet",
-      "description": "Développement d'une application web MVC permettant la gestion de stocks pour une PME. Includes authentification, gestion des rôles et génération de rapports PDF.",
+      "contexte": "BTS — TP",
+      "description": "Devellopement d'une application android de gestion de stock pour une petite entreprise locale, avec fonctionnalités de suivi des produits, alertes de réapprovisionnement et génération de rapports.",
       "competences": ["B1.1", "B2.1", "B3.1"],
       "technologies": ["PHP", "MySQL", "Bootstrap", "FPDF"],
       "image": null,
@@ -12,58 +12,26 @@
       "lien_rapport": null
     },
     {
-      "titre": "Site vitrine pour association",
-      "periode": "2023",
-      "contexte": "BTS — Projet",
-      "description": "Conception et développement d'un site vitrine responsive pour une association locale. Gestion de contenu via interface d'administration personnalisée.",
+      "titre": "Boites a livres pour une entreprise",
+      "periode": "2026",
+      "contexte": "Stage, BTS — Projet",
+      "description": "Conception et developpement d'une solution web se greffant a une boite a livres physique (meuble) pour une entreprise, permettant aux employés de consulter les livres disponibles, de les emprunter et de les rendre.",
       "competences": ["B1.1", "B2.2"],
-      "technologies": ["HTML", "CSS", "JavaScript", "PHP"],
+      "technologies": ["HTML", "CSS", "JavaScript", "PHP", "SQLite", "TWIG"],
       "image": null,
       "lien_demo": null,
       "lien_rapport": null
     },
     {
-      "titre": "Script automatisation réseau",
-      "periode": "2024",
+      "titre": "Service de notification pour plateforme logistique",
+      "periode": "2025",
       "contexte": "Stage",
       "description": "Script Python pour automatiser la collecte et l'analyse des logs réseaux, avec génération d'un rapport quotidien par email.",
       "competences": ["B2.3", "B3.1"],
-      "technologies": ["Python", "Bash", "SMTP"],
+      "technologies": ["C#"],
       "image": null,
       "lien_demo": null,
       "lien_rapport": null
-    }
-  ],
-  "competences_bts": [
-    {
-      "code": "B1.1",
-      "libelle": "Gérer le patrimoine informatique",
-      "missions": ["Application gestion de stock", "Script automatisation réseau"],
-      "niveau": "Maîtrisé"
-    },
-    {
-      "code": "B2.1",
-      "libelle": "Concevoir et développer une solution applicative",
-      "missions": ["Application gestion de stock"],
-      "niveau": "Maîtrisé"
-    },
-    {
-      "code": "B2.2",
-      "libelle": "Assurer la maintenance et l'évolution d'une solution applicative",
-      "missions": ["Site vitrine pour association"],
-      "niveau": "En cours"
-    },
-    {
-      "code": "B2.3",
-      "libelle": "Gérer les données",
-      "missions": ["Script automatisation réseau"],
-      "niveau": "En cours"
-    },
-    {
-      "code": "B3.1",
-      "libelle": "Travailler en mode projet",
-      "missions": ["Application gestion de stock", "Script automatisation réseau"],
-      "niveau": "Maîtrisé"
     }
   ]
 }
