@@ -1,30 +1,70 @@
 {
   "formations": [
     {
-      "periode": "2023 — 2025",
+      "periode": "2024 — 2026",
       "diplome": "BTS Services Informatiques aux Organisations",
-      "etablissement": "Lycée / CFA Exemple",
-      "lieu": "Paris, France",
+      "etablissement": "StJoSup",
+      "lieu": "Le Havre, France",
       "description": "Option SLAM (Solutions Logicielles et Applications Métiers). Formation orientée développement d'applications, bases de données et conduite de projets informatiques.",
       "matieres": ["PHP", "SQL", "JavaScript", "Python", "Réseaux", "Cybersécurité", "Gestion de projet"],
       "actuel": true
     },
+	{
+	  "periode": "2022 — 2024",
+	  "diplome": "BUT Informatique",
+	  "etablissement": "IUT Le Havre",
+	  "lieu": "Le Havre, France",
+	  "description": "Redoublement de la première année. Formation polyvalente couvrant les fondamentaux de l'informatique : programmation, systèmes d'exploitation, réseaux, bases de données et gestion de projet.",
+	  "matieres": ["C", "Java", "SQL", "Réseaux", "Systèmes d'exploitation", "Gestion de projet"]
+	},
     {
-      "periode": "2020 — 2023",
+      "periode": "2020 — 2022",
       "diplome": "Baccalauréat Général",
-      "etablissement": "Lycée Exemple",
-      "lieu": "Paris, France",
-      "description": "Spécialités Mathématiques et Numérique & Sciences Informatiques.",
-      "matieres": ["Mathématiques", "NSI", "Physique-Chimie"],
-      "mention": "Bien"
-    }
+      "etablissement": "Jules Siegfried",
+      "lieu": "Le Havre, France",
+      "description": "Spécialités Mathématiques et Numérique & Sciences Informatiques. Spécialités Sciences de l'Ingénieur en première année.",
+      "matieres": ["Mathématiques", "NSI", "Enseignement Scientifique", "Histoire-Géographie", "Français", "Philosophie"],
+      "mention": "Assez Bien"
+    },
+	{
+	  "periode": "2019 — 2020",
+	  "diplome": "Seconde Générale",
+	  "etablissement": "Lycée Jean Prevost",
+	  "lieu": "Montivilliers, France"	,
+	  "description": "Année de découverte des différentes matières générales, avec une orientation progressive vers les sciences et les technologies.",
+	  "matieres": ["Mathématiques", "Physique-Chimie", "Sciences de la Vie et de la Terre", "Français", "Histoire-Géographie", "Enseignement Scientifique"],
+	  "mention": null
+	},
+	{
+	  "periode": "2015 — 2019",
+	  "diplome": "Brevet des Collèges",
+	  "etablissement": "Collège Belle Etoile",
+	  "lieu": "Montivilliers, France",
+	  "description": "Formation générale couvrant les matières fondamentales du collège, avec une orientation vers les sciences et les technologies.",
+	  "matieres": ["Français", "Mathématiques", "Histoire-Géographie", "Sciences", "Sciences du Numérique et Technologique"],
+	  "mention": "Très Bien"
+	}
   ],
   "certifications": [
     {
-      "nom": "Certification Cisco CCNA Introduction",
-      "organisme": "Cisco Networking Academy",
-      "annee": "2024",
-      "competences": ["Réseaux", "TCP/IP", "Routage"],
+      "nom": "Certification RGPD",
+      "organisme": "L'atelier RGPD — CNIL",
+      "annee": "2025",
+      "competences": ["Apprentissage des principes du RGPD", "Mise en conformité des données personnelles", "Gestion des consentements"],
+      "lien": null
+    },
+	{
+      "nom": "MOOC de l'ANSI",
+      "organisme": "Agence Nationale de la Sécurité des Systèmes d'Information",
+      "annee": "2025",
+      "competences": ["Cybersécurité", "Gestion des risques informatiques", "Bonnes pratiques de sécurité"],
+      "lien": null
+    },
+	{
+      "nom": "Certification PIX",
+      "organisme": "Evaluation nationale des compétences numériques",
+      "annee": "2026",
+      "competences": ["Compétences numériques de base", "Culture numérique", "Création de contenu numérique", "Protection et sécurité des données"],
       "lien": null
     }
   ]
