@@ -1,34 +1,57 @@
 {
   "experiences": [
+    
     {
-      "periode": "Avr — Juin 2024",
-      "type": "Stage",
-      "poste": "Développeur web junior",
-      "entreprise": "Entreprise Exemple SAS",
-      "lieu": "Paris, France",
-      "description": "Développement et maintenance d'une application web interne de gestion des congés et plannings.",
+      "periode": "2022 — 2025",
+      "type": "Emploi",
+      "poste": "Équipier polyvalent",
+      "entreprise": "Lidl",
+      "lieu": "Harfleur, France",
+      "description": "Poste polyvalent en grande distribution sur 3 ans, en parallèle de ma formation, développant autonomie, rigueur et sens du travail en équipe.",
       "missions": [
-        "Développement de nouvelles fonctionnalités avec PHP/Symfony",
-        "Création d'interfaces utilisateur en HTML, CSS, JavaScript",
-        "Rédaction de la documentation technique",
-        "Participation aux revues de code en équipe"
+        "Mise en rayon et gestion des stocks",
+        "Accueil et conseil clientèle",
+        "Tenue de caisse et encaissements",
+        "Respect des normes d'hygiène et de sécurité alimentaire",
+        "Travail en équipe dans un environnement rythmé"
       ],
-      "competences": ["PHP", "Symfony", "JavaScript", "MySQL", "Git", "Agile"],
+      "competences": ["Travail en équipe", "Gestion du stress", "Rigueur", "Ponctualité", "Relation client"],
+      "actuel": true
+    },
+    
+    {
+      "periode": "Mai — Juin 2024",
+      "type": "Stage",
+      "poste": "Développeur backend",
+      "entreprise": "Actemium Process Control",
+      "lieu": "Le Havre, France",
+      "description": "Intégration d'un système de notifications intelligent dans le progiciel industriel GPAC, solution full-web de gestion automatisée des postes de chargement.",
+      "missions": [
+        "Conception et développement d'un NotificationService en C# / ASP.NET",
+        "Modélisation de la base de données (3 tables : Message, Diffusion, Parametrage)",
+        "Mise en place de l'architecture en couches DAL / BLL / API (clean architecture)",
+        "Création d'endpoints REST (GET, PATCH) avec filtrage métier des notifications",
+        "Configuration de l'environnement Docker avec SQL Server et Entity Framework Core",
+        "Rédaction du README et de la documentation technique complète"
+      ],
+      "competences": ["C#", ".NET", "ASP.NET", "SQL Server", "Entity Framework", "Docker", "GitLab", "REST API"],
       "actuel": false
     },
     {
-      "periode": "Juin — Juil. 2023",
-      "type": "Stage d'observation",
-      "poste": "Technicien informatique",
-      "entreprise": "Société Exemple SARL",
-      "lieu": "Paris, France",
-      "description": "Découverte du métier de technicien en entreprise, maintenance du parc informatique et support utilisateurs.",
+      "periode": "Jan — Fév 2026",
+      "type": "Stage",
+      "poste": "Développeur web",
+      "entreprise": "IES Ingénierie",
+      "lieu": "Port-Jérôme-sur-Seine, France",
+      "description": "Conception et développement from scratch d'une application web de gestion de boîte à livres dans le cadre de la politique RSE de l'entreprise.",
       "missions": [
-        "Support technique de niveau 1 et 2",
-        "Installation et configuration de postes de travail",
-        "Inventaire et suivi du parc informatique"
+        "Développement full-stack avec Symfony 7 et PHP 8.4",
+        "Système de scan de code-barres ISBN via l'API Google Books",
+        "Interface administrateur sécurisée (code PIN, historique, export Excel)",
+        "Gestion dynamique des tableaux et modales en JavaScript",
+        "Versioning rigoureux avec Git / GitHub (164 commits)"
       ],
-      "competences": ["Windows", "Active Directory", "Support", "ITIL"],
+      "competences": ["PHP", "Symfony", "Twig", "JavaScript", "MySQL", "Doctrine ORM", "Git", "GitHub"],
       "actuel": false
     }
   ]
