@@ -53,13 +53,13 @@ function loadData(string $name): array {
 $context = [
     'currentPage' => $page,
     'nav' => [
-        ['slug' => 'accueil',    'label' => 'Accueil',      'icon' => 'home'],
-        ['slug' => 'profil',     'label' => 'Profil',       'icon' => 'user'],
-        ['slug' => 'parcours',   'label' => 'Parcours',     'icon' => 'graduation-cap'],
-        ['slug' => 'experience', 'label' => 'Expérience',   'icon' => 'briefcase'],
-        ['slug' => 'missions',   'label' => 'Missions',     'icon' => 'layers'],
-        ['slug' => 'veille',     'label' => 'Veille',       'icon' => 'rss'],
-        ['slug' => 'contact',    'label' => 'Contact',      'icon' => 'mail'],
+        ['slug' => 'accueil',    'label' => 'Accueil',                  'icon' => 'home'],
+        ['slug' => 'profil',     'label' => 'Profil',                   'icon' => 'user'],
+        ['slug' => 'parcours',   'label' => 'Parcours',                 'icon' => 'graduation-cap'],
+        ['slug' => 'experience', 'label' => 'Expérience professionnel', 'icon' => 'briefcase'],
+        ['slug' => 'missions',   'label' => 'Missions',                 'icon' => 'layers'],
+        ['slug' => 'veille',     'label' => 'Veille',                   'icon' => 'rss'],
+        ['slug' => 'contact',    'label' => 'Contact',                  'icon' => 'mail'],
     ],
 ];
 
