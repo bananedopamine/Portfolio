@@ -130,6 +130,24 @@ Puis dans `data/profil.json` : `"photo": "/assets/images/photo.jpg"`
 
 ## Palette de couleurs
 
+### Thème clair
+
+| Variable        | Valeur    | Usage                   |
+|-----------------|-----------|-------------------------|
+| `--c-bg-0`      | `#FAF7F0` | Fond profond ivoire     |
+| `--c-bg-1`      | `#F4EFE2` | Fond base crème         |
+| `--c-bg-2`      | `#EBE4D2` | Cartes beige            |
+| `--c-bg-3`      | `#E0D8C2` | Éléments élevés         |
+| `--c-border`    | `#CFC5A5` | Bordures dorées pâles   |
+| `--c-muted`     | `#A8947A` | Texte atténué bronze    |
+| `--c-secondary` | `#6B5540` | Texte secondaire brun   |
+| `--c-text`      | `#261A0A` | Texte principal profond |
+| `--c-gold`      | `#B87A35` | Accent doré chaud       |
+| `--c-gold-lt`   | `#CF9E55` | Accent doré clair       |
+| `--c-rose`      | `#C07268` | Touche rosée            |
+
+### Thème sombre
+
 | Variable        | Valeur    | Usage               |
 |-----------------|-----------|---------------------|
 | `--c-bg-0`      | `#08080E` | Fond profond        |
