@@ -5,7 +5,10 @@
 
 /* ─── Variables ─────────────────────────────────────────────── */
 :root {
-  /* Couleurs — 10 exactement */
+  /* ═══════════════════════════════════════════════════════════════
+    THÈME SOMBRE — Palette Art Déco Nocturne
+    Bleu nuit profond, encre indigo & accents dorés
+  ═════════════════════════════════════════════════════════════════ */
   --c-bg-0:     #08080E;   /* 1. Fond profond */
   --c-bg-1:     #0E0F1A;   /* 2. Fond base */
   --c-bg-2:     #161828;   /* 3. Cartes */
@@ -59,6 +62,25 @@
   /* Transitions */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --dur: 200ms;
+}
+
+  /* ═══════════════════════════════════════════════════════════════
+    THÈME CLAIR — Palette Art Déco Solaire
+    Crème, ivoire, doré chaud & touches rosées
+  ═════════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] {
+  --c-bg-0:     #FAF7F0;   /* 1. Fond profond ivoire */
+  --c-bg-1:     #F4EFE2;   /* 2. Fond base crème */
+  --c-bg-2:     #EBE4D2;   /* 3. Cartes beige */
+  --c-bg-3:     #E0D8C2;   /* 4. Éléments élevés */
+  --c-border:   #CFC5A5;   /* 5. Bordures dorées pâles */
+  --c-muted:    #A8947A;   /* 6. Texte atténué bronze */
+  --c-secondary:#6B5540;   /* 7. Texte secondaire brun */
+  --c-text:     #261A0A;   /* 8. Texte principal profond */
+  --c-gold:     #B87A35;   /* 9. Accent doré chaud */
+  --c-gold-lt:  #CF9E55;   /* 10. Accent doré clair */
+  --c-rose:     #C07268;   /* Touche rosée */
 }
 
 /* ─── Reset ──────────────────────────────────────────────────── */
@@ -849,6 +871,200 @@ input, textarea, select { font: inherit; }
   .hero__actions { flex-direction: column; }
   .btn { justify-content: center; }
   .section-header__heading { font-size: var(--text-3xl); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   THÈME CLAIR — Palette Art Déco Solaire
+   Crème, ivoire, doré chaud & touches rosées
+   ═══════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] {
+  --c-bg-0:     #FAF7F0;   /* 1. Fond profond ivoire */
+  --c-bg-1:     #F4EFE2;   /* 2. Fond base crème */
+  --c-bg-2:     #EBE4D2;   /* 3. Cartes beige */
+  --c-bg-3:     #E0D8C2;   /* 4. Éléments élevés */
+  --c-border:   #CFC5A5;   /* 5. Bordures dorées pâles */
+  --c-muted:    #A8947A;   /* 6. Texte atténué bronze */
+  --c-secondary:#6B5540;   /* 7. Texte secondaire brun */
+  --c-text:     #261A0A;   /* 8. Texte principal profond */
+  --c-gold:     #B87A35;   /* 9. Accent doré chaud */
+  --c-gold-lt:  #CF9E55;   /* 10. Accent doré clair */
+  --c-rose:     #C07268;   /* Touche rosée */
+}
+
+/* ─── Overrides thème clair ──────────────────────────────────── */
+[data-theme="light"] body {
+  background-color: var(--c-bg-0);
+}
+
+/* Lueur ambiante adaptée au jour */
+[data-theme="light"] .ambient {
+  background: radial-gradient(ellipse, rgba(184, 122, 53, 0.09) 0%, rgba(192, 114, 104, 0.04) 50%, transparent 70%);
+}
+
+/* Grain plus discret en clair */
+[data-theme="light"] .grain {
+  opacity: 0.016;
+}
+
+/* Texte sur bouton primaire (fond doré → texte sombre) */
+[data-theme="light"] .btn--primary {
+  color: #261A0A;
+}
+
+/* Règle décorative avec touche rosée */
+[data-theme="light"] .section-header__rule {
+  background: linear-gradient(to right, var(--c-rose), var(--c-gold), transparent);
+}
+
+/* Barre de compétences : dégradé doré → rosé */
+[data-theme="light"] .skill-item__fill {
+  background: linear-gradient(to right, var(--c-gold), var(--c-rose));
+}
+
+/* Fond des inputs en mode clair */
+[data-theme="light"] .form-input {
+  background: var(--c-bg-1);
+  color: var(--c-text);
+}
+
+/* Chevron du select adapté */
+[data-theme="light"] .form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A8947A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Hover tableau compétences */
+[data-theme="light"] .competences-table tr:hover td {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+/* Modale PDF overrides (couleurs hard-codées dans le dark) */
+[data-theme="light"] .pdf-modal__backdrop {
+  background: rgba(80, 60, 30, 0.5);
+}
+[data-theme="light"] .pdf-modal__container {
+  background: var(--c-bg-1);
+  border-color: var(--c-border);
+  box-shadow: 0 24px 64px rgba(100, 70, 20, 0.25);
+}
+[data-theme="light"] .pdf-modal__body {
+  background: var(--c-bg-2);
+}
+[data-theme="light"] #pdfCanvas {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+[data-theme="light"] .pdf-modal__nav-btn {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: var(--c-border);
+  color: var(--c-text);
+}
+[data-theme="light"] .pdf-modal__nav-btn:hover {
+  background: var(--c-gold);
+  color: #fff;
+}
+[data-theme="light"] .pdf-viewer-preview {
+  border-color: var(--c-border);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Badge active (vert) reste lisible */
+[data-theme="light"] .badge--active {
+  background: rgba(22, 160, 88, 0.12);
+  color: #127a46;
+  border-color: rgba(22, 160, 88, 0.25);
+}
+
+/* Touch de rose sur les avis */
+[data-theme="light"] .article-card__avis {
+  border-left-color: rgba(192, 114, 104, 0.45);
+}
+
+/* ─── Transition douce au changement de thème ────────────────── */
+html {
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+body,
+.nav,
+.nav__list,
+.card,
+.mission-card,
+.article-card,
+.quick-nav__card,
+.timeline__card,
+.profil-id,
+.contact-info,
+.form-input,
+.pdf-modal__container,
+.pdf-modal__body {
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease,
+    color 300ms ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BOUTON BASCULE JOUR / NUIT
+   ═══════════════════════════════════════════════════════════════ */
+.theme-toggle {
+  position: fixed;
+  top: var(--sp-md);
+  right: var(--sp-md);
+  z-index: 150;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--c-bg-3);
+  box-shadow: 0 4px 16px rgba(200, 150, 90, 0.25);
+  transform: scale(1.08);
+}
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+/* En mode sombre → affiche la lune */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+/* En mode clair → affiche le soleil */
+[data-theme="light"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+/* Positionnement mobile : se décale à gauche du burger */
+@media (max-width: 900px) {
+  .theme-toggle {
+    top: 10px;
+    right: 58px;
+    width: 36px;
+    height: 36px;
+  }
+  .theme-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* ── PDF Preview Banner ─────────────────────────── */

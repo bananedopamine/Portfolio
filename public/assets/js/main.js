@@ -103,9 +103,41 @@ function initAmbientParallax() {
   });
 }
 
+// ─── Bascule Jour / Nuit ──────────────────────────────────────────────────────
+function initThemeToggle() {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+
+  function getTheme() {
+    return document.documentElement.getAttribute('data-theme') || 'dark';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    btn.setAttribute('aria-label', theme === 'light' ? 'Passer en mode sombre' : 'Passer en mode clair');
+    btn.setAttribute('title',      theme === 'light' ? 'Mode sombre'           : 'Mode clair');
+  }
+
+  btn.addEventListener('click', () => {
+    applyTheme(getTheme() === 'light' ? 'dark' : 'light');
+  });
+
+  // Synchronisation si la préférence système change sans rechargement de page
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      applyTheme(e.matches ? 'light' : 'dark');
+    }
+  });
+
+  // Initialiser l'aria-label selon le thème déjà appliqué
+  applyTheme(getTheme());
+}
+
 // ─── Init ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   animateSkillBars();
   initScrollReveal();
   initAmbientParallax();
+  initThemeToggle();
 });
