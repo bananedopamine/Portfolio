@@ -61,15 +61,14 @@
                 </ul>
                 {% endif %}
 
-                <div class="mission-card__footer">
-                    {% if mission.lien_demo is defined %}
-                    <a href="{{ mission.lien_demo }}" class="card__link" target="_blank" rel="noopener noreferrer">
-                        Démo <span aria-hidden="true">↗</span>
-                    </a>
-                    {% endif %}
+                <div class="mission-card__footer">                   
                     {% if mission.lien_rapport is defined %}
                     <a href="{{ mission.lien_rapport }}" class="card__link" target="_blank" rel="noopener noreferrer">
                         Rapport <span aria-hidden="true">↗</span>
+                    </a>
+                    {% else %}
+                    <a class="card__link">
+                        Rapport indisponible</span>
                     </a>
                     {% endif %}
                 </div>

@@ -8,24 +8,24 @@
   "accroche": "Passionné par le développement web et les nouvelles technologies, je construis des solutions robustes et élégantes.",
   "apropos": "En deuxième année de BTS SIO option SLAM, je développe mes compétences en développement logiciel, web et en gestion de projets informatiques. Curieux, rigoureux et autonome, j'aime résoudre des problèmes concrets à travers le code.",
   "disponible": true,
-  "photo": "/assets/all_rainbows.jpg",
+  "photo": "/assets/photo_de_profil.jpg",
   "reseaux": [
     { "label": "LinkedIn", "url": "https://linkedin.com/in/marc-dufour-904586329" },
     { "label": "GitHub",   "url": "https://github.com/bananedopamine" }
   ],
   "competences_tech": [
     { "nom": "PHP / Symfony",    "niveau": 75 },
-    { "nom": "JavaScript",       "niveau": 70 },
-    { "nom": "HTML / CSS",       "niveau": 85 },
-    { "nom": "SQL / MySQL",      "niveau": 65 },
-    { "nom": "Python",           "niveau": 55 },
+    { "nom": "JavaScript",       "niveau": 60 },
+    { "nom": "HTML / CSS",       "niveau": 65 },
+    { "nom": "SQL / MySQL",      "niveau": 70 },
+    { "nom": "Python",           "niveau": 40 },
     { "nom": "Git",              "niveau": 72 }
   ],
   "soft_skills": ["Autonomie", "Rigueur", "Travail en équipe", "Adaptabilité", "Communication", "Curiosité"],
   "langues": [
     { "nom": "Français",  "niveau": "Langue maternelle" },
-    { "nom": "Anglais",   "niveau": "B2 — Courant" },
-    { "nom": "Espagnol",  "niveau": "A2 — Notions" }
+    { "nom": "Anglais",   "niveau": "B2 - Courant" },
+    { "nom": "Espagnol",  "niveau": "A1 - Notions" }
   ],
   "interets": ["Développement web", "Cybersécurité", "Veille technologique", "Jeux vidéo", "Design UI/UX"]
 }

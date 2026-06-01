@@ -7,31 +7,30 @@
       "description": "Devellopement d'une application android de gestion de stock pour une petite entreprise locale, avec fonctionnalités de suivi des produits, alertes de réapprovisionnement et génération de rapports.",
       "competences": ["B1.1", "B2.1", "B3.1"],
       "technologies": ["PHP", "MySQL", "Bootstrap", "FPDF"],
-      "image": null,
-      "lien_demo": null,
-      "lien_rapport": null
+      "image": "assets/Android-Studio.png",
+      "lien_demo": null
     },
     {
       "titre": "Boites a livres pour une entreprise",
-      "periode": "2026",
+      "periode": "Janvier - Février 2026",
       "contexte": "Stage, BTS — Projet",
       "description": "Conception et developpement d'une solution web se greffant a une boite a livres physique (meuble) pour une entreprise, permettant aux employés de consulter les livres disponibles, de les emprunter et de les rendre.",
       "competences": ["B1.1", "B2.2"],
       "technologies": ["HTML", "CSS", "JavaScript", "PHP", "SQLite", "TWIG"],
-      "image": null,
+      "image": "assets/ies_logo.jpg",
       "lien_demo": null,
-      "lien_rapport": null
+      "lien_rapport": "assets/Rapport_Stage_BTS_SIO.pdf"
     },
     {
-      "titre": "Service de notification pour plateforme logistique",
-      "periode": "2025",
+      "titre": "Service de notifications",
+      "periode": "Mai - Juin 2025",
       "contexte": "Stage",
-      "description": "Script Python pour automatiser la collecte et l'analyse des logs réseaux, avec génération d'un rapport quotidien par email.",
+      "description": "intégration d’un système de notifications intelligent dans l’application de l’entreprise.",
       "competences": ["B2.3", "B3.1"],
-      "technologies": ["C#"],
-      "image": null,
+      "technologies": ["C#","Swagger"],
+      "image": "assets/swagger-banner.PNG",
       "lien_demo": null,
-      "lien_rapport": null
+      "lien_rapport": "assets/Dufour Marc Rapport Stage SIO1.pdf"
     }
   ]
 }
